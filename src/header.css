@@ -1,0 +1,9 @@
+.header{
+    color: aqua;
+    border: 10px solid red;
+    border-left: none;
+    border-right: none;
+    width: 200px;
+    margin: auto;
+    
+}
