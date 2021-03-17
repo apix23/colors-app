@@ -1,13 +1,13 @@
 import React from 'react';
 import './Card.css';
 
-const Card = () => {
+const Card = ({year, name, color, pantoneValue}) => {
     return (
-        <div className="card">
-            <p >2011</p>
-            <p className="text-center">negro</p>
-            <p className="text-center">#00000</p>
-            <p className="text-end">13-1101</p>
+        <div className="card" style={{ background: color }}>
+            <p >{year}</p>
+            <p className="text-center">{name}</p>
+            <p className="text-center">{color}</p>
+            <p className="text-end">{pantoneValue}</p>
         </div>
     )
 }
