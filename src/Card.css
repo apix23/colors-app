@@ -6,6 +6,8 @@
     border-radius :10px;
     height: 120px;
     padding: 0 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .card p{

@@ -1,3 +1,5 @@
+
+
 .card__container{
   display: flex;
   justify-content: space-between;
@@ -6,6 +8,11 @@
   height: 450px;
 }
 
+.btn__container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* .App {
   text-align: center;
 }
