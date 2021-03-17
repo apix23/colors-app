@@ -1,6 +1,13 @@
 .card{
-    width: 300px;
+    min-width: 100px;
+    width: 30%;
     color: #fff;
     background-color: #000;
     border-radius :10px;
+    height: 120px;
+    padding: 0 10px;
+}
+
+.card p{
+    margin: 0;
 }
