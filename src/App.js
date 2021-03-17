@@ -1,5 +1,7 @@
+import { Button } from 'bootstrap';
 import './App.css';
 import Card from './Card';
+import Footer from './Footer';
 import Header from "./Header";
 function App() {
   const arr = new Array(9)
@@ -19,7 +21,8 @@ function App() {
     <Card></Card>
     <Card></Card>
     </section>
-
+    
+    <Footer></Footer>
     </>
   );
 }
