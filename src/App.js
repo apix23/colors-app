@@ -9,20 +9,40 @@ import Header from "./Header";
 
 const App = () => {
 
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);  
+  const [jsonResponse, setJsonResponse] = useState({});
+  
   const [colorsInfo, setColorsInfo] = useState([]);
-  const [page, setPage] = useState(1)
   
   useEffect(() => {
-    
-    const makeGetRequest = async (page) => {
-    let res = await axios.get(`https://reqres.in/api/colors?page=${page}`);
-    setColorsInfo(res.data.data);
-  }
-  makeGetRequest(page);
-  console.log('this is colorsinfo',colorsInfo);
-  
-  }, [])
+    // this function will do the fetch to the URL getting the data colors and seting it up in the
+    // colorsInfo variable with the setColorsInfo method;
 
+    const fetchingDataColors = async (page) => {
+      let standardValue= 1;
+
+      //this for will execute the call to the API as many time as total_pages. 
+      //In this case, there are only two pages, but, in case the API gets updated with
+      //more colors, the app will keep working since the new colors would get dinamically
+      //included.
+      for (let index = 1; index <= standardValue; index++) {
+        
+        let res = await axios.get(`https://reqres.in/api/colors?page=${index}`);
+        
+        setJsonResponse(res.data);
+        let referencialColor = res.data.data;
+        
+        setColorsInfo(colors => colors.concat(referencialColor));
+        standardValue = res.data.total_pages;
+      }
+        
+      }
+  
+  fetchingDataColors(page);
+  }, [])
+  
+  console.log(colorsInfo);
 
   return (
     <main className="container">
