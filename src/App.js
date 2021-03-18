@@ -53,6 +53,7 @@ const App = () => {
                 year={year}
                 name={name}
                 color={color}
+                id={id}
                 pantoneValue={pantone_value}
               />
             );
@@ -62,14 +63,14 @@ const App = () => {
       <section className="btn__container">
         <Button
           disableEnableFunction={() => setPage(1)}
-          content="atras"
+          content="Atras"
           buttonAparience={page === 1 ? "secondary" : "primary"}
           disableClass={page === 1 ? "disabled" : ""}
         ></Button>
 
         <Button
           disableEnableFunction={() => setPage(2)}
-          content="siguiente"
+          content="Siguiente"
           buttonAparience={page === totalPages ? "primary" : "secondary"}
           disableClass={page === totalPages ? "" : "disabled"}
         ></Button>
