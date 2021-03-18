@@ -27,14 +27,19 @@ const App = () => {
         let res = await axios.get(`https://reqres.in/api/colors?page=${index}`);
 
         let referencialColor = res.data.data;
-
+        setTotalPages(2);
         setColorsArray((colors) => colors.concat(referencialColor));
         standardValue = res.data.total_pages;
       }
     };
     fetchingDataColors(page);
   }, []);
-  console.log(colorsArray);
+  console.log("this is pages", page);
+  console.log("this is total pages", totalPages);
+
+  const testFunction = () => {
+    setPage(page + 1);
+  };
   return (
     <main className="container">
       <Header></Header>
@@ -62,17 +67,17 @@ const App = () => {
 
       <section className="btn__container">
         <Button
-          disableEnableFunction={() => setPage(1)}
+          disableEnableFunction={console.log("hey brother")}
           content="Atras"
           buttonAparience={page === 1 ? "secondary" : "primary"}
           disableClass={page === 1 ? "disabled" : ""}
         ></Button>
 
         <Button
-          disableEnableFunction={() => setPage(2)}
+          disableEnableFunction={testFunction}
           content="Siguiente"
-          buttonAparience={page === totalPages ? "primary" : "secondary"}
-          disableClass={page === totalPages ? "" : "disabled"}
+          buttonAparience={page === totalPages ? "secondary" : "primary"}
+          disableClass={page === totalPages ? "disabled" : ""}
         ></Button>
       </section>
 
