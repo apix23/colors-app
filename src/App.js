@@ -8,9 +8,9 @@ import Header from "./Header";
 
 const App = () => {
   const [page, setPage] = useState(1);
-  const [resultPerPage] = useState(9);
   const [colorsArray, setColorsArray] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
+  const resultsPerPage = 9;
 
   useEffect(() => {
     // this function will do the fetch to the URL getting the data colors and seting it up in the
@@ -35,20 +35,23 @@ const App = () => {
     fetchingDataColors(page);
   }, []);
 
-  const nextPage = () => {
+  const nextPage = (e) => {
+    e.preventDefault();
     setPage(page + 1);
   };
-  const beforePage = () => {
+  const previousPage = (e) => {
+    e.preventDefault();
     setPage(page - 1);
   };
   return (
     <main className="container">
       <Header></Header>
       <section className="card__container">
+        {/* showing only the number of results per page */}
         {colorsArray
           ?.slice(
-            page * resultPerPage - resultPerPage,
-            resultPerPage * page || colorsArray.length
+            page * resultsPerPage - resultsPerPage,
+            resultsPerPage * page || colorsArray.length
           )
           .map((colordata) => {
             const { id, year, name, color, pantone_value } = colordata;
@@ -68,7 +71,7 @@ const App = () => {
 
       <section className="btn__container">
         <Button
-          disableEnableFunction={beforePage}
+          disableEnableFunction={previousPage}
           content="Atras"
           buttonAparience={page === 1 ? "secondary" : "primary"}
           disableClass={page === 1 ? "disabled" : ""}
