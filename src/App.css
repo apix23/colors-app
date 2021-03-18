@@ -1,14 +1,12 @@
-
-
-.card__container{
+.card__container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   height: 450px;
 }
 
-.btn__container{
+.btn__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
