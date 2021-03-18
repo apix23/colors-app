@@ -23,14 +23,14 @@ const Card = ({ clipboardCopyFunc, id, year, name, color, pantoneValue }) => {
         }}
         className="overlay"
       >
-        <p className="text user-select-none">Click to copy</p>
-        <p id={id} className="text user-select-none copied-text">
+        <p className="text fs-3 fw-bold user-select-none">Click to copy</p>
+        <p id={id} className="fs-4 text fw-bold user-select-none copied-text">
           Copied!
         </p>
       </div>
       <p className="user-select-none">{year}</p>
-      <p className="text-center user-select-none">{name}</p>
-      <p className="text-center user-select-none">{color}</p>
+      <p className="text-capitalize text-center user-select-none">{name}</p>
+      <p className="fs-4 fw-bold text-center user-select-none">{color}</p>
       <p className="text-end user-select-none">{pantoneValue}</p>
     </div>
   );

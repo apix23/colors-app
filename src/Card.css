@@ -27,10 +27,8 @@
 }
 
 .overlay .text {
-  color: white;
-  font-size: 25px;
+  color: #fff;
   text-align: center;
-  font-weight: bold;
 }
 .overlay:hover {
   opacity: 0.9;
