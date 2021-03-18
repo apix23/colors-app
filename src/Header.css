@@ -1,9 +1,12 @@
+header {
+  height: 70px;
+}
+
 .header {
   color: #007bff;
   border: 5px solid #fd4c00;
   border-left: none;
   border-right: none;
-  width: 250px;
+  width: 240px;
   margin: auto;
-  height: 70px;
 }
