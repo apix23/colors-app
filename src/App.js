@@ -34,11 +34,12 @@ const App = () => {
     };
     fetchingDataColors(page);
   }, []);
-  console.log("this is pages", page);
-  console.log("this is total pages", totalPages);
 
-  const testFunction = () => {
+  const nextPage = () => {
     setPage(page + 1);
+  };
+  const beforePage = () => {
+    setPage(page - 1);
   };
   return (
     <main className="container">
@@ -67,14 +68,14 @@ const App = () => {
 
       <section className="btn__container">
         <Button
-          disableEnableFunction={console.log("hey brother")}
+          disableEnableFunction={beforePage}
           content="Atras"
           buttonAparience={page === 1 ? "secondary" : "primary"}
           disableClass={page === 1 ? "disabled" : ""}
         ></Button>
 
         <Button
-          disableEnableFunction={testFunction}
+          disableEnableFunction={nextPage}
           content="Siguiente"
           buttonAparience={page === totalPages ? "secondary" : "primary"}
           disableClass={page === totalPages ? "disabled" : ""}

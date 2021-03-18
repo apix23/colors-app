@@ -1,9 +1,9 @@
-.header{
-    color: #007bff;
-    border: 5px solid #fd4c00;
-    border-left: none;
-    border-right: none;
-    width: 250px;
-    margin: auto;
-    
+.header {
+  color: #007bff;
+  border: 5px solid #fd4c00;
+  border-left: none;
+  border-right: none;
+  width: 250px;
+  margin: auto;
+  height: 70px;
 }

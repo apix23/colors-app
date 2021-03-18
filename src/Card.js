@@ -29,8 +29,12 @@ const Card = ({ clipboardCopyFunc, id, year, name, color, pantoneValue }) => {
         </p>
       </div>
       <p className="user-select-none">{year}</p>
-      <p className="text-capitalize text-center user-select-none">{name}</p>
-      <p className="fs-4 fw-bold text-center user-select-none">{color}</p>
+
+      <div>
+        <p className="text-center text-capitalize user-select-none">{name}</p>
+        <p className="text-center fs-4 fw-bold user-select-none">{color}</p>
+      </div>
+
       <p className="text-end user-select-none">{pantoneValue}</p>
     </div>
   );
