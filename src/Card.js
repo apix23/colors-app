@@ -8,6 +8,9 @@ const Card = ({ clipboardCopyFunc, year, name, color, pantoneValue }) => {
       onClick={clipboardCopyFunc}
       style={{ background: color }}
     >
+      <div className="overlay">
+        <p>click to copy</p>
+      </div>
       <p className="user-select-none">{year}</p>
       <p className="text-center user-select-none">{name}</p>
       <p className="text-center user-select-none">{color}</p>
